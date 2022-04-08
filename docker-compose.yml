@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  tomcat:
+    image: tomcat:9-jdk11-temurin
+    ports:
+      - 8080:8080
+    volumes:
+      - type: bind
+        source: ./target/my-car-service.war
+        target: /usr/local/tomcat/webapps/my-car-service.war
